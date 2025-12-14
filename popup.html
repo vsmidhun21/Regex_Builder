@@ -11,14 +11,13 @@
 
     <h3>🔧 Smart Regex Builder</h3>
 
-    <!-- Tabs -->
     <div class="tabs">
         <button class="tab active" data-tab="generate">Generate</button>
         <button class="tab" data-tab="test">Test</button>
         <button class="tab" data-tab="saved">Saved</button>
     </div>
 
-    <!-- TAB 1: GENERATE -->
+    <!-- GENERATE -->
     <div class="tab-content active" id="generate">
 
         <label>Field Type</label>
@@ -41,37 +40,52 @@
         </div>
 
         <label>Starts With</label>
-        <input id="startsWith" placeholder="optional">
+        <input id="startsWith">
 
         <label>Length</label>
-        <input id="length" type="number" min="1" placeholder="e.g. 10">
+        <input id="length" type="number" min="1">
 
         <label>Regex Name</label>
-        <input id="regexName" placeholder="e.g. Indian Phone Validator">
+        <input id="regexName">
 
-        <button id="generateBtn">Generate Regex</button>
+        <div class="btn-row">
+            <button id="generateBtn">Generate</button>
+            <button id="saveBtn">Save</button>
+
+            <div class="copy-wrap">
+                <button id="copyBtn" title="Copy to clipboard">📋</button>
+                <span id="copyMsg">Copied!</span>
+            </div>
+        </div>
 
         <textarea id="generatedRegex" readonly></textarea>
     </div>
 
-    <!-- TAB 2: TEST -->
+    <!-- TEST -->
     <div class="tab-content" id="test">
-
         <label>Regex</label>
-        <input id="testRegex" placeholder="Paste regex here">
+        <input id="testRegex">
 
         <label>Test Input</label>
         <textarea id="testInput"></textarea>
 
+        <button id="testBtn">Test</button>
         <div id="testResult"></div>
     </div>
 
-    <!-- TAB 3: SAVED -->
+    <!-- SAVED -->
     <div class="tab-content" id="saved">
         <ul id="savedList"></ul>
     </div>
 
     <script src="popup.js"></script>
+
+    <footer class="app-footer">
+        <div class="author">Developed by <strong>Midhun</strong></div>
+        <div class="footer-links">
+            <a href="https://forms.gle/spEva38Y43KFQn7B6" id="reportIssue">Report</a>
+        </div>
+    </footer>
 </body>
 
 </html>

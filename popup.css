@@ -30,16 +30,6 @@ textarea {
   resize: none;
 }
 
-button {
-  margin-top: 8px;
-  width: 100%;
-  padding: 7px;
-  background: #22c55e;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .tabs {
   display: flex;
   gap: 4px;
@@ -57,7 +47,7 @@ button {
 
 .tab.active {
   background: #22c55e;
-  color: #000000;
+  color: black;
 }
 
 .tab-content {
@@ -70,6 +60,33 @@ button {
 
 .hidden {
   display: none;
+}
+
+.btn-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.btn-row button {
+  flex: none;
+  padding: 6px 10px;
+  background: #22c55e;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#copyBtn {
+  background: #38bdf8;
+}
+
+#testBtn {
+  margin-top: 8px;
+  width: 100%;
+  background: #22c55e;
+  border: none;
+  padding: 6px;
 }
 
 #testResult {
@@ -103,4 +120,42 @@ button {
 .saved-actions button {
   flex: 1;
   padding: 4px;
+}
+
+.copy-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+#copyBtn {
+  background: #38bdf8;
+}
+
+#copyMsg {
+  position: absolute;
+  top: -18px;
+  right: 0;
+  background: #22c55e;
+  color: black;
+  padding: 2px 6px;
+  font-size: 10px;
+  border-radius: 4px;
+  display: none;
+}
+
+.saved-actions button:first-child {
+  background: #38bdf8;
+}
+
+.saved-actions button:last-child {
+  background: #ef4444;
+  color: white;
+}
+
+/* Footer */
+.app-footer { display:flex; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); padding:2px 4px; }
+
+#reportIssue {
+  color: white;
 }
