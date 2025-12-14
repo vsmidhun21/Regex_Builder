@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Smart Regex Builder",
+    "version": "1.0.0",
+    "description": "Build and test regular expressions visually and export them for multiple languages.",
+    "permissions": [
+        "storage"
+    ],
+    "icons": {
+        "16": "icons/regex.png",
+        "48": "icons/regex.png",
+        "128": "icons/regex.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    }
+}

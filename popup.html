@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Smart Regex Builder</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+    <h3>🔧 Smart Regex Builder</h3>
+
+    <label>Match Type</label>
+    <select id="matchType">
+        <option value="email">Email</option>
+        <option value="phone">Phone Number</option>
+        <option value="url">URL</option>
+        <option value="number">Number Only</option>
+        <option value="custom">Custom</option>
+    </select>
+
+    <label>Starts With</label>
+    <input type="text" id="startsWith" placeholder="optional">
+
+    <label>Contains</label>
+    <input type="text" id="contains" placeholder="optional">
+
+    <label>Ends With</label>
+    <input type="text" id="endsWith" placeholder="optional">
+
+    <label>Test Input</label>
+    <textarea id="testInput" placeholder="Paste text to test"></textarea>
+
+    <div id="result"></div>
+
+    <label>Language</label>
+    <select id="language">
+        <option value="js">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="go">Go</option>
+    </select>
+
+    <button id="generate">Generate Regex</button>
+
+    <textarea id="output" readonly></textarea>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>
