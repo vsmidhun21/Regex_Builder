@@ -1,5 +1,5 @@
 body {
-  width: 320px;
+  width: 340px;
   font-family: Arial, sans-serif;
   background: #0f172a;
   color: #e5e7eb;
@@ -31,21 +31,76 @@ textarea {
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 8px;
   width: 100%;
-  padding: 8px;
+  padding: 7px;
   background: #22c55e;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 
-#output {
-  margin-top: 8px;
-  font-family: monospace;
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
 }
 
-#result {
+.tab {
+  flex: 1;
+  padding: 6px;
+  background: #1e293b;
+  color: #e5e7eb;
+  border: none;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #22c55e;
+  color: #000000;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+#testResult {
   margin-top: 6px;
-  font-size: 12px;
+  font-size: 13px;
+}
+
+.match {
+  background: #22c55e;
+  color: black;
+}
+
+#savedList {
+  list-style: none;
+  padding: 0;
+}
+
+#savedList li {
+  background: #1e293b;
+  padding: 6px;
+  margin-bottom: 6px;
+  border-radius: 4px;
+}
+
+.saved-actions {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.saved-actions button {
+  flex: 1;
+  padding: 4px;
 }

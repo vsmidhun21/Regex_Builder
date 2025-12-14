@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>Smart Regex Builder</title>
     <link rel="stylesheet" href="popup.css">
 </head>
@@ -11,41 +11,65 @@
 
     <h3>🔧 Smart Regex Builder</h3>
 
-    <label>Match Type</label>
-    <select id="matchType">
-        <option value="email">Email</option>
-        <option value="phone">Phone Number</option>
-        <option value="url">URL</option>
-        <option value="number">Number Only</option>
-        <option value="custom">Custom</option>
-    </select>
+    <!-- Tabs -->
+    <div class="tabs">
+        <button class="tab active" data-tab="generate">Generate</button>
+        <button class="tab" data-tab="test">Test</button>
+        <button class="tab" data-tab="saved">Saved</button>
+    </div>
 
-    <label>Starts With</label>
-    <input type="text" id="startsWith" placeholder="optional">
+    <!-- TAB 1: GENERATE -->
+    <div class="tab-content active" id="generate">
 
-    <label>Contains</label>
-    <input type="text" id="contains" placeholder="optional">
+        <label>Field Type</label>
+        <select id="fieldType">
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="username">Username</option>
+            <option value="name">Name</option>
+            <option value="number">Number</option>
+            <option value="alphanumeric">Alphanumeric</option>
+        </select>
 
-    <label>Ends With</label>
-    <input type="text" id="endsWith" placeholder="optional">
+        <div id="countryWrap" class="hidden">
+            <label>Country</label>
+            <select id="country">
+                <option value="IN">India</option>
+                <option value="US">USA</option>
+                <option value="UK">UK</option>
+            </select>
+        </div>
 
-    <label>Test Input</label>
-    <textarea id="testInput" placeholder="Paste text to test"></textarea>
+        <label>Starts With</label>
+        <input id="startsWith" placeholder="optional">
 
-    <div id="result"></div>
+        <label>Length</label>
+        <input id="length" type="number" min="1" placeholder="e.g. 10">
 
-    <label>Language</label>
-    <select id="language">
-        <option value="js">JavaScript</option>
-        <option value="python">Python</option>
-        <option value="java">Java</option>
-        <option value="php">PHP</option>
-        <option value="go">Go</option>
-    </select>
+        <label>Regex Name</label>
+        <input id="regexName" placeholder="e.g. Indian Phone Validator">
 
-    <button id="generate">Generate Regex</button>
+        <button id="generateBtn">Generate Regex</button>
 
-    <textarea id="output" readonly></textarea>
+        <textarea id="generatedRegex" readonly></textarea>
+    </div>
+
+    <!-- TAB 2: TEST -->
+    <div class="tab-content" id="test">
+
+        <label>Regex</label>
+        <input id="testRegex" placeholder="Paste regex here">
+
+        <label>Test Input</label>
+        <textarea id="testInput"></textarea>
+
+        <div id="testResult"></div>
+    </div>
+
+    <!-- TAB 3: SAVED -->
+    <div class="tab-content" id="saved">
+        <ul id="savedList"></ul>
+    </div>
 
     <script src="popup.js"></script>
 </body>
